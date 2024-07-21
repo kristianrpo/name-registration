@@ -1,0 +1,11 @@
+{
+    "name": "kristian/name-registration",
+    "autoload": {
+        "psr-4": {
+            "Kristian\\NameRegistration\\": "src/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
