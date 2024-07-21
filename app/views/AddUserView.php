@@ -1,12 +1,9 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="public/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap" rel="stylesheet">
@@ -24,7 +21,7 @@
                     <i class="fa-brands fa-html5"></i>
                 </div>
                 <div class="card-title">
-                    <h1>Registro de nombres con <span>MySQL</span> + <span>PHP</span></h1>
+                    <h1>Registro de usuarios con <span>MySQL</span> + <span>PHP</span></h1>
                 </div>
                 <div class="card-form">
                     <form action="./" method="post">
@@ -41,7 +38,7 @@
             <!-- Card for Viewing Names -->
             <div class="card-view-names">
                 <div class="title-container">
-                    <h2>Nombres registrados</h2>
+                    <h2>Usuarios registrados</h2>
                 </div>
                 <div class="names-container">
                     <?php foreach ($names as $name): ?>

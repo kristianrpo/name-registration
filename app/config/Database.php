@@ -1,8 +1,8 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . "/../../vendor/autoload.php";
 use Dotenv\Dotenv;
 
-$dotenv = Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv = Dotenv::createImmutable(__DIR__ . "/../../");
 $dotenv->load();
 
 class Database{
@@ -27,8 +27,8 @@ class Database{
         $connection->close();
     }
     public function createQuery($connection,$sql){
-        $sql_response = $connection->query($sql);
-        return $sql_response;
+        $sqlResponse = $connection->query($sql);
+        return $sqlResponse;
     }
 
 
