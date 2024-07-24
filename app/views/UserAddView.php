@@ -13,8 +13,8 @@
 <body>
     <div class="general-container">
         <div class="cards-container">
-            <!-- Card for Registry Names -->
-            <div class="card-registry-names">
+            <!-- Card for Registry Users -->
+            <div class="card-registry-users">
                 <div class="card-icon">
                     <i class="fa-brands fa-php"></i>
                     <i class="fa-solid fa-database"></i>
@@ -35,15 +35,15 @@
                     </form>
                 </div>
             </div>
-            <!-- Card for Viewing Names -->
-            <div class="card-view-names">
+            <!-- Card for Viewing Users -->
+            <div class="card-view-users">
                 <div class="title-container">
                     <h2>Usuarios registrados</h2>
                 </div>
-                <div class="names-container">
-                    <?php foreach ($names as $name): ?>
-                        <div class="name-element">
-                            <p><?= $name; ?></p>
+                <div class="users-container">
+                    <?php foreach ($users as $user): ?>
+                        <div class="user-element">
+                            <p><?= $user; ?></p>
                         </div>
                     <?php endforeach; ?>
                 </div>

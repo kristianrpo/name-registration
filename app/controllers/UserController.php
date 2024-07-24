@@ -1,25 +1,27 @@
 <?php
-require_once __DIR__ . "/../config/Database.php";
-require __DIR__ . "/../models/User.php";
+require __DIR__ . "/../config/Database.php";
+require __DIR__ . "/../models/UserModel.php";
+require __DIR__ . "/../repository/UserRepository.php";
+
 class UserController{
+
+    private $database;
+    private $userRepository;
+
+    public function __construct() {
+        $this->database = new Database();
+        $this->userRepository = new UserRepository($this->database);
+    }
+
     public function index(){
-        $names = [];
-        $database = new Database();
-        $connection = $database->connect();
         if($_POST){
             $name = $_POST["name"];
             $user = new User($name);
-            $user->save($database);
+            $this->userRepository->saveUser($user);
         }
-        $sql = "SELECT * FROM users";
-        $sqlResponse = $database->createQuery($connection,$sql);
-        if($sqlResponse->num_rows>0){
-            while($row = $sqlResponse->fetch_assoc()){
-                array_push($names,$row["name"]);
-            }
-        }
-        $database->disconnect($connection);
-        require_once __DIR__ . "/../views/AddUserView.php";
+
+        $users = $this->userRepository->fetchAllUsers();
+        require __DIR__ . "/../views/UserAddView.php";
     }
 }
 ?>
